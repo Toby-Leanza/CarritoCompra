@@ -6,7 +6,16 @@ using System.Threading.Tasks;
 
 namespace CarritoCompras
 {
-    class Categoria
+    public class Categoria
     {
+        public string nombre;
+        public string descripcion;
+
+        public Categoria(string nombre, string descripcion)
+        {
+            this.nombre = nombre;
+            this.descripcion = descripcion;
+        }
+
     }
 }
