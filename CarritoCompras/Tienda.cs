@@ -10,6 +10,7 @@ namespace CarritoCompras
     {
         public List<Producto> Productos { get; set; } = new List<Producto>();
         public List<Categoria> Categorias { get; set; } = new List<Categoria>();
+        
         public Tienda()
         {
             Categorias.Add(new Categoria("Electrodomésticos", "Productos para una mayor comodidad hogareña"));
