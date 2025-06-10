@@ -12,6 +12,15 @@ namespace CarritoCompras
         public List<Categoria> Categorias { get; set; } = new List<Categoria>();
         public Tienda()
         {
+            Categorias.Add(new Categoria("Electrodomésticos", "Productos para una mayor comodidad hogareña"));
+            Categorias.Add(new Categoria("Frutas", "Frutas frescas de estación"));
+            Categorias.Add(new Categoria("Lácteos", "Leche, yogures y quesos"));
+            Categorias.Add(new Categoria("Panadería", "Pan, facturas y productos horneados"));
+            Categorias.Add(new Categoria("Bebidas", "Gaseosas, jugos, aguas"));
+            Categorias.Add(new Categoria("Limpieza", "Artículos de limpieza para el hogar"));
+            Categorias.Add(new Categoria("Carnes", "Carne vacuna, pollo, cerdo"));
+            Categorias.Add(new Categoria("Tecnología", "Celulares, notebooks y más"));
+            
             Productos.Add(new Producto(1001, "Heladera", 900000.0, 5, Categorias[0]));
             Productos.Add(new Producto(1002, "Microondas", 120000.0, 8, Categorias[0]));
             Productos.Add(new Producto(1003, "Lavarropas", 350000.0, 3, Categorias[0]));
@@ -41,15 +50,6 @@ namespace CarritoCompras
             Productos.Add(new Producto(8001, "Celular Android", 250000.0, 6, Categorias[7]));
             Productos.Add(new Producto(8002, "Notebook 14\"", 550000.0, 4, Categorias[7]));
             Productos.Add(new Producto(8003, "Procesadores AMD", 150000.0, 7, Categorias[7]));
-
-            Categorias.Add(new Categoria("Electrodomésticos", "Productos para una mayor comodidad hogareña"));
-            Categorias.Add(new Categoria("Frutas", "Frutas frescas de estación"));
-            Categorias.Add(new Categoria("Lácteos", "Leche, yogures y quesos"));
-            Categorias.Add(new Categoria("Panadería", "Pan, facturas y productos horneados"));
-            Categorias.Add(new Categoria("Bebidas", "Gaseosas, jugos, aguas"));
-            Categorias.Add(new Categoria("Limpieza", "Artículos de limpieza para el hogar"));
-            Categorias.Add(new Categoria("Carnes", "Carne vacuna, pollo, cerdo"));
-            Categorias.Add(new Categoria("Tecnología", "Celulares, notebooks y más"));
 
         }
     }
