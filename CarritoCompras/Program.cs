@@ -7,6 +7,7 @@ namespace CarritoCompras
         static void Main(string[] args)
         {
             Carrito cart = new Carrito();
+            Tienda tienda = new Tienda();
 
             string opcion;
 
@@ -31,15 +32,61 @@ namespace CarritoCompras
                 switch (opcion)
                 {
                     case "1":
+                        foreach (Categoria c in tienda.Categories)
+                        {
+                            c.VerCategorias();
+                        }
                         break;
 
                     case "2":
+
+                        foreach (Producto p in tienda.Productos)
+                        {
+                            p.VerProductos();
+                        }
+
                         break;
 
                     case "3":
+
+                        Console.WriteLine("Ingrese la categoría: ");
+                        string category = Console.ReadLine();
+
+                        Categoria filtro = tienda.Categories.Find(x => x.nombre == category);
+
+                        if (filtro != null)
+                        {
+                            foreach (Producto p in tienda.Productos)
+                            {
+                                p.VerProductosPorFiltro(filtro);
+                            }
+                        }
+                        else
+                        {
+                            Console.WriteLine("Categoría inválida");
+                        }
                         break;
 
                     case "4":
+                        Console.WriteLine("Ingrese el código del producto: ");
+                        string ID = Console.ReadLine();
+                        int cod = int.Parse(ID);
+                        Console.WriteLine("Ingrese la cantidad a llevar: ");
+                        string cant = Console.ReadLine();
+                        int amount = int.Parse(cant);
+
+                        Producto productoEncontrado = tienda.Productos.Find(x => x.codigo == cod);
+
+
+                        if (productoEncontrado != null && amount <= productoEncontrado.stock && amount > 0 && productoEncontrado.stock > 0)
+                        {
+                            cart.Agregar(productoEncontrado, amount);
+                        }
+                        else
+                        {
+                            Console.WriteLine("Operación fallida");
+                        } 
+
                         break;
 
                     case "5":

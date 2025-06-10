@@ -8,11 +8,11 @@ namespace CarritoCompras
 {
     public class Producto
     {
-        int codigo;
-        string nombre;
-        double precio;
-        int stock;
-        Categoria categoria;
+        public int codigo;
+        public string nombre;
+        public double precio;
+        public int stock;
+        public Categoria categoria;
 
         public Producto(int codigo, string nombre, double precio, int stock, Categoria categoria)
         {
@@ -21,6 +21,19 @@ namespace CarritoCompras
             this.precio = precio;
             this.stock = stock;
             this.categoria = categoria;
+        }
+
+        public void VerProductos()
+        {
+            Console.WriteLine($"Código: {codigo} | {nombre} - ${precio} | Stock: {stock} | Categoria: {categoria.nombre} ");
+        }
+
+        public void VerProductosPorFiltro(Categoria category)
+        {
+            if(category == categoria)
+            {
+                Console.WriteLine($"Código: {codigo} | {nombre} - ${precio} | Stock: {stock} | Categoria: {categoria.nombre} ");
+            }
         }
 
     }

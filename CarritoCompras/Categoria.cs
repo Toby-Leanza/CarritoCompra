@@ -16,6 +16,11 @@ namespace CarritoCompras
             this.nombre = nombre;
             this.descripcion = descripcion;
         }
+        public void VerCategorias()
+        {
+            Console.WriteLine(nombre);
+        }
 
+        
     }
 }
