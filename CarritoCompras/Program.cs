@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 namespace CarritoCompras
 {
@@ -85,45 +85,45 @@ namespace CarritoCompras
                         else
                         {
                             Console.WriteLine("Operación fallida: stock insuficiente o producto no encontrado.");
-                        } 
+                        }
 
                         break;
 
-                        case "5":
-                            Console.Write("Ingrese el código del producto a eliminar: ");
-                            int codigo = int.Parse(Console.ReadLine());
-                            carrito.EliminarItem(codigo);
-                            break;
-                    
-                        case "6":
-                            carrito.VerCarrito();
-                            break;
-                    
-                        case "7":
-                            double total = carrito.Total();
-                            Console.WriteLine($"Total a pagar: ${total}");
-                            break;
-                    
-                        case "8":
-                            if (carrito.EstaVacio())
-                            {
-                                Console.WriteLine("No hay productos en el carrito.");
-                                return;
-                            }
-                    
-                            carrito.Total();
-                            carrito.listaItems.Clear();
-                            Console.WriteLine("¡Compra finalizada con éxito!");
-                            break;
-                    
-                        case "0":
-                            break;
-                    
-                        default:
-                            Console.WriteLine("Opción no válida");
-                            break;
-                    
-                    }
+                    case "5":
+                        Console.Write("Ingrese el código del producto a eliminar: ");
+                        int codigo = int.Parse(Console.ReadLine());
+                        cart.EliminarItem(codigo);
+                        break;
+
+                    case "6":
+                        cart.VerCarrito();
+                        break;
+
+                    case "7":
+                        double total = cart.Total();
+                        Console.WriteLine($"Total a pagar: ${total}");
+                        break;
+
+                    case "8":
+                        if (cart.EstaVacio())
+                        {
+                            Console.WriteLine("No hay productos en el carrito.");
+                            return;
+                        }
+
+                        cart.Total();
+                        cart.listaItems.Clear();
+                        Console.WriteLine("¡Compra finalizada con éxito!");
+                        break;
+
+                    case "0":
+                        break;
+
+                    default:
+                        Console.WriteLine("Opción no válida");
+                        break;
+
+                }
 
 
                 if (opcion != "0")
