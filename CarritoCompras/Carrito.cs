@@ -29,7 +29,7 @@ namespace CarritoCompras
             producto.stock -= cantidad;
         }
 
-        public void Eliminar(int codigo)
+        public void EliminarItem(int codigo)
         {
             var items = listaItems.FirstOrDefault(i => i.producto.codigo == codigo);
             if (items != null)
@@ -39,7 +39,7 @@ namespace CarritoCompras
             }
         }
 
-        public void Ver()
+        public void VerCarrito()
         {
             if (!listaItems.Any())
             {
