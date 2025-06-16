@@ -55,8 +55,22 @@ namespace CarritoCompras
 
         public double Total()
         {
-            return listaItems.Sum(i => i.producto.precio * i.cantidad);
+            double subtotal = 0;
+
+            foreach (var item in listaItems)
+            {
+                double precioUnitario = item.producto.precio;
+                if (item.cantidad >= 5)
+                {
+                    precioUnitario *= 0.85; // Aplica 15% de descuento
+                }
+                subtotal += precioUnitario * item.cantidad;
+            }
+
+            double totalConIVA = subtotal * 1.21; // Aplica 21% de IVA
+            return totalConIVA;
         }
+
 
         public void Vaciar()
         {
